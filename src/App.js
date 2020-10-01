@@ -3,6 +3,9 @@ import './App.css';
 import Navbar from './components/Navbar';
 // import Home from './containers/Home';
 import Card from './components/Card';
+import whiskey from './assets/images/whiskey.jpg';
+import hazel from './assets/images/hazel.jpg';
+import tubby from './assets/images/tubby.jpg';
 
 class App extends Component {
 
@@ -11,7 +14,7 @@ class App extends Component {
       {
         name: "Whiskey",
         age: 5,
-        // src: whiskey,
+        src: whiskey,
         facts: [
           "Whiskey loves eating popcorn.",
           "Whiskey is a terrible guard dog.",
@@ -21,7 +24,7 @@ class App extends Component {
       {
         name: "Hazel",
         age: 3,
-        // src: hazel,
+        src: hazel,
         facts: [
           "Hazel has soooo much energy!",
           "Hazel is highly intelligent.",
@@ -31,7 +34,7 @@ class App extends Component {
       {
         name: "Tubby",
         age: 4,
-        // src: tubby,
+        src: tubby,
         facts: [
           "Tubby is not the brightest dog",
           "Tubby does not like walks or exercise.",
@@ -48,6 +51,7 @@ class App extends Component {
         name={dog.name}
         age={dog.age}
         facts={dog.facts}
+        src={dog.src}
       />
     );
 
