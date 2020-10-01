@@ -10,7 +10,6 @@ function App() {
       <Navbar />
       <h1>React Router Dog Finder</h1>
       <Home />
-      <Card />
     </div>
   );
 }

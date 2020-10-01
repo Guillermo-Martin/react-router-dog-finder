@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Card from '../components/Card';
 
 class Home extends Component {
   static defaultProps = {
@@ -37,9 +38,18 @@ class Home extends Component {
   }
   
   render() {
+    // render a card for each dog in the array
+    const dogsArr = this.props.dogs.map(dog => 
+      <Card 
+        name={dog.name}
+        age={dog.age}
+        facts={dog.facts}
+      />
+    );
+
     return(
       <div>
-      <p>{this.props.dogs[0].name}</p>
+      <p>{dogsArr}</p>
     </div>
     )
   }
