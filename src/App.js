@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
-import Home from './components/Home';
+import Home from './containers/Home';
 import Card from './components/Card';
 
 function App() {
