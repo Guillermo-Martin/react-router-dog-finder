@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
 // import Home from './containers/Home';
@@ -57,8 +58,11 @@ class App extends Component {
     );
 
     // render a <li> for every dog in the array and pass to Navbar
+    // each dog name will be a <Link>
     const navLinksArr = this.props.dogs.map(dog => 
-      <li>{dog.name}</li>
+      <Link to={dog.name}>
+        <li>{dog.name}</li>
+      </Link>
     );
 
     return (
