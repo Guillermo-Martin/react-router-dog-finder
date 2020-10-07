@@ -1,9 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Card(props) {
+  let pathName = `/${props.name}`;
+  
   return (
-    <div className="card" style={{ width: "18rem" }}>
-      <img src={props.src} className="card-img-top" alt="..." />
+    <Link to={pathName}>
+      <div className="card" style={{ width: "18rem" }}>
+        <img src={props.src} className="card-img-top" alt="..." />
         <div className="card-body">
           <h5 className="card-title">{props.name}</h5>
           <p className="card-text">Age: {props.age}</p>
@@ -17,7 +21,9 @@ function Card(props) {
           <a href="#" className="card-link">Card link</a>
           <a href="#" className="card-link">Another link</a>
         </div>
-    </div>
+      </div>
+    </Link>
+
   );
 }
 

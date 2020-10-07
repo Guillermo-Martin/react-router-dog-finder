@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
 // import Home from './containers/Home';
@@ -62,10 +63,11 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Navbar
-          links={navLinksArr}
-        />
-        <p>{dogsArr}</p>
+        <Router>
+          <Navbar links={navLinksArr} />
+          <p>{dogsArr}</p>
+        </Router>
+        
      </div>
     );
   }
