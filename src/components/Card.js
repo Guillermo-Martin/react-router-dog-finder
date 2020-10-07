@@ -5,9 +5,10 @@ function Card(props) {
   let pathName = `/${props.name}`;
   
   return (
-    <Link to={pathName}>
       <div className="card" style={{ width: "18rem" }}>
-        <img src={props.src} className="card-img-top" alt="..." />
+        <Link to={pathName}>
+          <img src={props.src} className="card-img-top" alt={pathName} />
+        </Link>
         <div className="card-body">
           <h5 className="card-title">{props.name}</h5>
           <p className="card-text">Age: {props.age}</p>
@@ -22,8 +23,6 @@ function Card(props) {
           <a href="#" className="card-link">Another link</a>
         </div>
       </div>
-    </Link>
-
   );
 }
 
