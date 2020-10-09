@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import Card from '../components/Card';
-import Navbar from '../components/Navbar';
+import { Link } from 'react-router-dom';
 
 class Home extends Component {
 
@@ -11,10 +10,10 @@ class Home extends Component {
     // for every dog in the allDogs array render and image with a name
     const dogImgs = allDogs.map(dog => 
         <div key={dog.name}>
-          <img src={dog.src} alt={dog.name} />
+          <Link to={`dogs/${dog.name}`}><img src={dog.src} alt={dog.name} /></Link>
           <p>{dog.name}</p>
         </div>
-      )
+    );
 
     return (
       <div>
@@ -26,6 +25,3 @@ class Home extends Component {
 }
 
 export default Home;
-
-
-// create an array and pass it down to home

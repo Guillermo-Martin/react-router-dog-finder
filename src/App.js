@@ -47,8 +47,6 @@ class App extends Component {
   }
 
   render() {
-    // for each dog in the array, pass the source to home OR pass the array to home
-    
 
     // render a card for each dog in the array
     const dogsArr = this.props.dogs.map(dog => 
