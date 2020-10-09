@@ -5,29 +5,18 @@ import Navbar from '../components/Navbar';
 class Home extends Component {
 
   render() {
-    // render a card for each dog in the array
-    const dogsArr = this.props.dogs.map(dog =>
-      <Card
-        name={dog.name}
-        age={dog.age}
-        facts={dog.facts}
-      />
-    );
 
-    // render a <li> for every dog in the array and pass to Navbar
-    const navLinksArr = this.props.dogs.map(dog =>
-      <li>{dog.name}</li>
-    )
+    const allDogs = this.props.dogs;
 
     return (
       <div>
-        <Navbar
-          links={navLinksArr}
-        />
-        <p>{dogsArr}</p>
+        <h1>This is the home page</h1>
       </div>
-    )
+    );
   }
 }
 
 export default Home;
+
+
+// create an array and pass it down to home

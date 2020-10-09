@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { Link, Switch } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
-// import Home from './containers/Home';
+import Home from './containers/Home';
 import Card from './components/Card';
 import whiskey from './assets/images/whiskey.jpg';
 import hazel from './assets/images/hazel.jpg';
@@ -47,6 +47,9 @@ class App extends Component {
   }
 
   render() {
+    // for each dog in the array, pass the source to home OR pass the array to home
+    
+
     // render a card for each dog in the array
     const dogsArr = this.props.dogs.map(dog => 
       <Card 
@@ -60,7 +63,7 @@ class App extends Component {
     // render a <li> for every dog in the array and pass to Navbar
     // each dog name will be a <Link>
     const navLinksArr = this.props.dogs.map(dog => 
-      <Link to={dog.name}>
+      <Link to={dog.name} key={dog.name}>
         <li>{dog.name}</li>
       </Link>
     );
@@ -69,7 +72,9 @@ class App extends Component {
       <div className="App">
         <Router>
           <Navbar links={navLinksArr} />
-          <p>{dogsArr}</p>
+          {/* Render a component with dogs array */}
+          <Route exact path="/" render={() => <Home dogs={this.props.dogs} />} />
+          {/* <p>{dogsArr}</p> */}
         </Router>
         
      </div>
@@ -78,3 +83,4 @@ class App extends Component {
 }
 
 export default App;
+
