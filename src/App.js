@@ -49,14 +49,14 @@ class App extends Component {
   render() {
 
     // render a card for each dog in the array
-    const dogsArr = this.props.dogs.map(dog => 
-      <Card 
-        name={dog.name}
-        age={dog.age}
-        facts={dog.facts}
-        src={dog.src}
-      />
-    );
+    // const dogsArr = this.props.dogs.map(dog => 
+    //   <Card 
+    //     name={dog.name}
+    //     age={dog.age}
+    //     facts={dog.facts}
+    //     src={dog.src}
+    //   />
+    // );
 
     // render a <li> for every dog in the array and pass to Navbar
     // each dog name will be a <Link>
@@ -70,8 +70,18 @@ class App extends Component {
       <div className="App">
         <Router>
           <Navbar links={navLinksArr} />
-          {/* Render a component with dogs array */}
+          
+
+          {/* When "/" is hit, render the Home component */}
           <Route exact path="/" render={() => <Home dogs={this.props.dogs} />} />
+
+          {/* When "/dogs/:name" is hit, render a Card component with all the info */}
+          <Route exact path="/dogs/:name" render={(routeProps) => 
+            <Card {...routeProps} {...this.props.dogs} />} 
+          />
+          
+
+
           {/* <p>{dogsArr}</p> */}
         </Router>
         
@@ -82,3 +92,6 @@ class App extends Component {
 
 export default App;
 
+// for each route, render a card with all the info!
+// route path will be /dog/:name
+// when you go to that path, render a component with props passed in
