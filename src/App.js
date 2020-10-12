@@ -65,16 +65,17 @@ class App extends Component {
           <Navbar links={navLinksArr} />
 
           {/* ===== ROUTES ===== */}
-          {/* When "/" is hit, render the Home component */}
-          <Route exact path="/" render={() => <Home dogs={this.props.dogs} />} />
+          <Switch>
+            {/* When "/" is hit, render the Home component */}
+            <Route exact path="/" render={() => <Home dogs={this.props.dogs} />} />
 
-          {/* When "/dogs/:name" is hit, render a Card component with all the info */}
-          <Route exact path="/dogs/:name" render={(routeProps) => 
-            <Card {...routeProps} dogs={this.props.dogs} />} 
-          />
-
-        </Router>
+            {/* When "/dogs/:name" is hit, render a Card component with all the info */}
+            <Route exact path="/dogs/:name" render={(routeProps) => 
+              <Card {...routeProps} dogs={this.props.dogs} />} 
+            />
+          </Switch>
         
+        </Router>
      </div>
     );
   }
