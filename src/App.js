@@ -77,7 +77,7 @@ class App extends Component {
 
           {/* When "/dogs/:name" is hit, render a Card component with all the info */}
           <Route exact path="/dogs/:name" render={(routeProps) => 
-            <Card {...routeProps} {...this.props.dogs} />} 
+            <Card {...routeProps} dogs={this.props.dogs} />} 
           />
           
 
