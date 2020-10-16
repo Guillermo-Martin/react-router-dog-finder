@@ -9,6 +9,12 @@ function Card(props) {
   // for every dog, if dog.name equals dogName, put it in 'dogData'
   // dogData has all of that dog's info
   const [dogData] = props.dogs.filter(dog => dog.name === dogName);
+
+  // "Go Back" button function
+  function goBack() {
+    props.history.goBack();
+  }
+  
   
   return (
       <div className="card" style={{ width: "18rem" }}>
@@ -27,8 +33,7 @@ function Card(props) {
           <li className="list-group-item">{dogData.facts[2]}</li>
         </ul>
         <div className="card-body">
-          <a href="#" className="card-link">Card link</a>
-          <a href="#" className="card-link">Another link</a>
+          <button type="button" className="btn btn-primary" onClick={goBack}>Go Back</button>
         </div>
       </div>
   );
