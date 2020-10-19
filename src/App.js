@@ -52,7 +52,7 @@ class App extends Component {
     // render a <li> for every dog in the array and pass to Navbar
     // each dog name will be a <Link>
     const navLinksArr = this.props.dogs.map(dog => 
-      <NavLink exact to={dog.name} key={dog.name} activeClassName="active-link">
+      <NavLink exact to={`/dogs/${dog.name}`} key={dog.name} activeClassName="active-link">
         <li>{dog.name}</li>
       </NavLink>
     );
