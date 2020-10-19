@@ -4,7 +4,7 @@ import { NavLink, Switch, Redirect } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
 import Home from './containers/Home';
-import Card from './components/Card';
+import Card from './containers/Card';
 import whiskey from './assets/images/whiskey.jpg';
 import hazel from './assets/images/hazel.jpg';
 import tubby from './assets/images/tubby.jpg';
@@ -46,8 +46,9 @@ class App extends Component {
     ]
   }
 
-  render() {
+  
 
+  render() {
     // =====  NAVBAR =====
     // render a <li> for every dog in the array and pass to Navbar
     // each dog name will be a <Link>
@@ -58,6 +59,7 @@ class App extends Component {
     );
 
     return (
+
       <div className="App">
         <Router>
 
@@ -68,7 +70,6 @@ class App extends Component {
           <Switch>
             {/* When "/dogs" is hit, render the Home component */}
             <Route exact path="/dogs" render={() => <Home dogs={this.props.dogs} />} />
-            
             
             {/* When "/dogs/:name" is hit, render a Card component with all the info */}
             <Route exact path="/dogs/:name" render={(routeProps) => 
@@ -86,5 +87,3 @@ class App extends Component {
 }
 
 export default App;
-
-// when "/" is hit, redirect to "/dogs" and rednder the "Home" component
