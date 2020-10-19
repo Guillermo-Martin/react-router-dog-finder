@@ -66,13 +66,17 @@ class App extends Component {
 
           {/* ===== ROUTES ===== */}
           <Switch>
-            {/* When "/" is hit, render the Home component */}
-            <Route exact path="/" render={() => <Home dogs={this.props.dogs} />} />
-
+            {/* When "/dogs" is hit, render the Home component */}
+            <Route exact path="/dogs" render={() => <Home dogs={this.props.dogs} />} />
+            
+            
             {/* When "/dogs/:name" is hit, render a Card component with all the info */}
             <Route exact path="/dogs/:name" render={(routeProps) => 
               <Card {...routeProps} dogs={this.props.dogs} />} 
             />
+
+            {/* When '/' is hit, redirect to '/dogs' */}
+            <Redirect to="/dogs" />
           </Switch>
         
         </Router>
