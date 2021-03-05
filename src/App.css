@@ -56,7 +56,6 @@
 }
 
 .Home-container {
-  /* border: 3px solid black; */
   margin-top: 5rem;
 }
 
@@ -76,4 +75,10 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+}
+
+.Card-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
 }

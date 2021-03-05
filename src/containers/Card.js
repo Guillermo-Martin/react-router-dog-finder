@@ -7,7 +7,7 @@ class Card extends Component {
   goBack = () => {
     this.props.history.goBack();
   }
-  
+
   render() {
 
     // get dogName from URL
@@ -24,34 +24,37 @@ class Card extends Component {
       // render the card of that dog, otherwise, redirect to the homepage
       <div>
         {
-          // condition
+          // condition:  if the dog's name isn't found in the array...
           allDogNames.indexOf(dogName) !== -1
 
-          // render card if the dog is in the array
-          ?
+            // render card if the dog is in the array
+            ?
 
-            <div className="card" style={{ width: "18rem" }}>
+            <div className="container Card-container">
+              <div className="card" style={{ width: "35rem" }}>
 
-              {/* ===== IMAGE ===== */}
-              <img src={dogData.src} className="card-img-top" alt={dogData.name} />
+                {/* ===== IMAGE ===== */}
+                <img src={dogData.src} className="card-img-top" alt={dogData.name} />
 
-              {/* ===== INFO ===== */}
-              <div className="card-body">
-                <h5 className="card-title">{dogData.name}</h5>
-                <p className="card-text">Age: {dogData.age}</p>
-              </div>
-              <ul className="list-group list-group-flush">
-                <li className="list-group-item">{dogData.facts[0]}</li>
-                <li className="list-group-item">{dogData.facts[1]}</li>
-                <li className="list-group-item">{dogData.facts[2]}</li>
-              </ul>
-              <div className="card-body">
-                <button type="button" className="btn btn-primary" onClick={this.goBack}>Go Back</button>
+                {/* ===== INFO ===== */}
+                <div className="card-body">
+                  <h5 className="card-title">{dogData.name}</h5>
+                  <p className="card-text">Age: {dogData.age}</p>
+                </div>
+                <ul className="list-group list-group-flush">
+                  <li className="list-group-item">{dogData.facts[0]}</li>
+                  <li className="list-group-item">{dogData.facts[1]}</li>
+                  <li className="list-group-item">{dogData.facts[2]}</li>
+                </ul>
+                <div className="card-body">
+                  <button type="button" className="btn btn-primary" onClick={this.goBack}>Go Back</button>
+                </div>
               </div>
             </div>
 
-          // redirect if the dog isn't found in the array
-          : 
+
+            // redirect if the dog isn't found in the array
+            :
             <Redirect to="/" />
         }
       </div>
